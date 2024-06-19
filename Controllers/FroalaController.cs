@@ -53,7 +53,13 @@ namespace Angular_Crud_C_.Controllers
 			return Ok(resp);
 		}
 
-		[HttpDelete("DeleteById/{id}")]
+        [HttpGet("getstring")]
+        public string Getstring()
+        {
+            return "abc";
+        }
+
+        [HttpDelete("DeleteById/{id}")]
 		public async Task<IActionResult> DeleteById(string id)
 		{
 			var resp = await _mediator.Send(new DeleteContentByIdCommand(id));
